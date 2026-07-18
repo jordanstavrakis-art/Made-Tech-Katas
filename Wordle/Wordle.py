@@ -37,8 +37,6 @@ for i in range(0,len(guess)):
 
 # Check if dupe letter is already in correct place,
 # if so replace any "1"s with "0"s
-print(letter_results)
-
 n=0
 for i in letter_results:
     # Check where more instances of letter in guess than target word
