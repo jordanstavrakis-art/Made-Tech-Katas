@@ -1,25 +1,24 @@
-target = "stump".lower()
+"""
+Create a Wordle program, which, given a 5 character string 
+as a target word, and a 5 character string as a guess, 
+return a 5 character string where:
+2 = this letter is in this position
+1 = this letter is in the target word but not this position
+0 = this letter is either not in the target word, 
+    or is not in the target word as many times as it is in the guess
+"""
 
-guess = input("Please enter a 5 letter word: ").lower()
+target_word = "Stink".lower()
 
-if len(guess) != 5 or not guess.isalpha():
-    guess = input("Invalid guess. Please enter a 5-letter word: ").lower()
-else:
-    print(guess)
-
+guess = "Share".lower()
 result = ""
-guess_letters = ""
-for i in range(5):
-    guess_letters += guess[i]
-    if guess[i] == target[i]:
+
+for i in range(0,len(guess)):
+    if guess[i] == target_word[i]:
         result += "2"
-
-    elif guess[i] in target:
-        if guess_letters.count(guess[i]) > target.count(guess[i]):
-            result += "0"
-        else:
-            result += "1"
-
+    elif guess[i] in target_word:
+        result += "1"
     else:
         result += "0"
-print(result)
+
+print(f"Result is: {result}")
