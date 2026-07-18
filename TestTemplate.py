@@ -1,5 +1,4 @@
 import unittest
-from Wordle import target_word, guess, result
 
 class Testing(unittest.TestCase):
 
