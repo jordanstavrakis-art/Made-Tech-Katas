@@ -21,14 +21,13 @@ class Testing(unittest.TestCase):
     def test_guess_is_letters_only(self):
         self.assertTrue(guess.isalpha())
     
-    # def test_result_output_bad_guess(self):
-    #     expected_result = "00000"
-    #     self.assertEqual(expected_result,result)
+    def test_at_least_one_letter_wrong(self):
+        self.assertTrue("0" in result)
 
-    # def test_one_letter_correct_wrong_place(self):
-    #     self.assertTrue("1" in result)
+    def test_at_least_one_letter_correct_wrong_place(self):
+        self.assertTrue("1" in result)
     
-    def test_one_letter_correct_right_place(self):
+    def test_at_least_one_letter_correct_right_place(self):
         self.assertTrue("2" in result)
 
 

@@ -10,7 +10,7 @@ return a 5 character string where:
 
 target_word = "Stink".lower()
 
-guess = "Share".lower()
+guess = "Stops".lower()
 result = ""
 
 for i in range(0,len(guess)):
