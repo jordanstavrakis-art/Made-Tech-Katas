@@ -3,17 +3,23 @@ write a program that displays LCD style numbers.
 """
 class zero:
     top = " _ "
+    extra_top = "| |"
     middle = "| |"
+    extra_bottom = "| |"
     bottom = "|_|"
 
 class one:
     top = "   "
+    extra_top = " | "
     middle = " | "
+    extra_bottom = " | "
     bottom = " | "
 
 class two:
     top = " _ "
+    extra_top = "  |"
     middle = " _|"
+    extra_bottom = "|  "
     bottom = "|_ "
 
 class three:
@@ -53,18 +59,22 @@ class nine:
 
 numbers_dict = {'0': zero,
                 '1': one,
-                '2': two,
-                '3': three,
-                '4': four,
-                '5': five,
-                '6': six,
-                '7': seven,
-                '8': eight,
-                '9': nine}
+                '2': two}
+                # '3': three,
+                # '4': four,
+                # '5': five,
+                # '6': six,
+                # '7': seven,
+                # '8': eight,
+                # '9': nine}
 
-def print_LCD(list):
-    sections = ["top","middle","bottom"]
+def print_LCD(list,height=1,width=1):
     lcd_output = ""
+    # Check if additonal height needed. If not ignore extra height sections
+    if height == 1:
+        sections = ["top","middle","bottom"]
+    else:
+        sections = ["top","extra_top","middle","extra_bottom","bottom"]
     for s in sections:
         if s != "top":
             lcd_output += "\n"
@@ -77,4 +87,6 @@ def print_LCD(list):
 
 
 number_input = list(input("Enter some numbers: "))
+# height_input = list(input("Enter value for height: "))
+# width_input = list(input("Enter value for width: "))
 print_LCD(number_input)
